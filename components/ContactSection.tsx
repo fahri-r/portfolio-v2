@@ -1,0 +1,145 @@
+import { gradient } from "@/lib/gradient";
+import { shadow } from "@/lib/shadow";
+import { transition } from "@/lib/transition";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Input,
+  Text,
+  Textarea,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { IoPaperPlane } from "react-icons/io5";
+import SectionLayout from "./layouts/SectionLayout";
+
+const ContactSection = () => {
+  const firstMotion = {
+    animate: {
+      opacity: [0, 1],
+      transition: { ease: "easeOut", duration: 0.4 },
+    },
+  };
+  return (
+    <SectionLayout title="Contact">
+      <Box pt={"15px"} mb={"10px"}>
+        <form action="#">
+          <Grid templateColumns="repeat(4, 1fr)" w="full" gap={"30px"}>
+            <GridItem colSpan={{ base: 4, md: 2 }}>
+              <Input
+                h={55}
+                p={{ base: "13px 20px", md: "15px 20px" }}
+                fontSize={{ base: 14, md: 15 }}
+                color="whiteAlpha.900"
+                fontWeight="normal"
+                borderWidth="1px"
+                borderStyle="solid"
+                borderColor="jet.100"
+                borderRadius={"14px"}
+                outline="none"
+                w="full"
+                bg="none"
+                placeholder="Full name"
+                required
+              />
+            </GridItem>
+            <GridItem colSpan={{ base: 4, md: 2 }}>
+              <Input
+                h={55}
+                p={{ base: "13px 20px", md: "15px 20px" }}
+                fontSize={{ base: 14, md: 15 }}
+                color="whiteAlpha.900"
+                fontWeight="normal"
+                borderWidth="1px"
+                borderStyle="solid"
+                borderColor="jet.100"
+                borderRadius={"14px"}
+                outline="none"
+                w="full"
+                bg="none"
+                placeholder="Email"
+                type="email"
+                required
+              />
+            </GridItem>
+            <GridItem colSpan={4}>
+              <Input
+                h={55}
+                p={{ base: "13px 20px", md: "15px 20px" }}
+                fontSize={{ base: 14, md: 15 }}
+                color="whiteAlpha.900"
+                fontWeight="normal"
+                borderWidth="1px"
+                borderStyle="solid"
+                borderColor="jet.100"
+                borderRadius={"14px"}
+                outline="none"
+                w="full"
+                bg="none"
+                placeholder="Subject"
+                required
+              />
+            </GridItem>
+            <GridItem colSpan={4}>
+              <Textarea
+                minH={"300px"}
+                resize="vertical"
+                p={{ base: "13px 20px", md: "15px 20px" }}
+                fontSize={{ base: 14, md: 15 }}
+                color="whiteAlpha.900"
+                fontWeight="normal"
+                borderWidth="1px"
+                borderStyle="solid"
+                borderColor="jet.100"
+                borderRadius={"14px"}
+                outline="none"
+                w="full"
+                bg="none"
+                placeholder="Message"
+                required
+              />
+            </GridItem>
+            <GridItem
+              colSpan={{ base: 4, lg: 1 }}
+              colStart={{ base: 1, lg: 4 }}
+            >
+              <Flex
+                opacity={0.7}
+                cursor="not-allowed"
+                p={{ base: "13px 20px", md: "15px 20px" }}
+                fontSize={{ base: 14, md: 16 }}
+                position="relative"
+                bg={gradient.borderGradientOnyx[100]}
+                color="orangeYellowCrayola.100"
+                justifyContent="center"
+                alignItems="center"
+                gap={"10px"}
+                borderRadius={"14px"}
+                textTransform="capitalize"
+                boxShadow={{ base: shadow.base[300], xl: shadow.xl[300] }}
+                zIndex={1}
+                transition={transition[100]}
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  inset: "1px",
+                  background: gradient.bgGradientJet[100],
+                  borderRadius: "inherit",
+                  zIndex: -1,
+                  transition: transition[100],
+                }}
+              >
+                <IoPaperPlane />
+                <Text>Submit</Text>
+              </Flex>
+            </GridItem>
+          </Grid>
+        </form>
+      </Box>
+    </SectionLayout>
+  );
+};
+
+export default ContactSection;
