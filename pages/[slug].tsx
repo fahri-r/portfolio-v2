@@ -85,8 +85,9 @@ export default function Home() {
           gap={{ base: "10px", lg: "25px" }}
           mb={"30px"}
         >
-          {data?.tools.map((x) => (
+          {data?.tools.map((x, i) => (
             <Text
+              key={i}
               p={{ base: "3px 12px", md: "5px 18px" }}
               color="white"
               bg="onyx.100"
@@ -99,8 +100,9 @@ export default function Home() {
           ))}
         </Flex>
         <Flex direction="column" gap={"30px"} mb={"10px"}>
-          {data?.images.map((x) => (
+          {data?.images.map((x, i) => (
             <Box
+              key={i}
               as={motion.div}
               variants={initialBox}
               w="full"

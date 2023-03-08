@@ -47,6 +47,7 @@ const AboutSection = () => {
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={"20px 25px"}>
           {Profile.services.map((x, i) => (
             <Flex
+              key={i}
               direction={{ base: "column", md: "row" }}
               justifyContent={{ base: "center", md: "flex-start" }}
               alignItems={{ base: "center", md: "flex-start" }}

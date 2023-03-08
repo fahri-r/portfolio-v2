@@ -111,7 +111,7 @@ const PortfolioSection = () => {
             </ListItem>
 
             {Category.map((x, i) => (
-              <ListItem>
+              <ListItem key={i}>
                 <Button
                   bg="eerieBlack.200"
                   color="lightGray.100"
@@ -157,6 +157,7 @@ const PortfolioSection = () => {
           </Button>
           {Category.map((x, i) => (
             <Button
+              key={i}
               color={
                 active == x.label ? "orangeYellowCrayola.100" : "lightGray.100"
               }
