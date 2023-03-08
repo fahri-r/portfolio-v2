@@ -1,5 +1,16 @@
 import { Category } from "./category";
 
+export interface PortfolioItemProps {
+  title: string;
+  slug: string;
+  description?: string;
+  images: string[];
+  tools: string[];
+  github: string;
+  site: string;
+  thumbnail: string;
+}
+
 export const Portfolio = [
   {
     title: "I-EVKIN BUMD",

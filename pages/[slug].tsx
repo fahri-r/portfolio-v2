@@ -21,16 +21,15 @@ import { motion } from "framer-motion";
 import { AiOutlineEye } from "react-icons/ai";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { Portfolio } from "@/data/portfolio";
+import { Portfolio, PortfolioItemProps } from "@/data/portfolio";
 import ProjectLayout from "@/components/layouts/ProjectLayout";
 
 const inter = Inter({ subsets: ["latin"] });
+interface Props {
+  data: PortfolioItemProps;
+}
 
-export default function Home() {
-  const router = useRouter();
-  const { slug } = router.query;
-  const data = Portfolio.find((p) => p.slug === slug);
-
+export default function Home({ data }: Props) {
   const initialBox = {
     rest: {
       scale: 1,
@@ -138,4 +137,14 @@ export default function Home() {
       </SectionLayout>
     </ProjectLayout>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  const slug = context.query.slug;
+  const data = Portfolio.find((p) => p.slug === slug);
+  return {
+    props: {
+      data,
+    },
+  };
 }
