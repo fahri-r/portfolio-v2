@@ -20,18 +20,44 @@ const MainLayout = ({
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Fahri's homepage" />
-        <meta name="author" content="Muhammad Fahri Ramadhan" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta property="og:site_name" content="Fahri's homepage" />
-        <meta name="og:title" content={title ?? "Fahri's homepage"} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/avatar.png" />
+        {/* Primary Meta Tags */}
         <title>
           {title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
         </title>
+        <meta
+          name="title"
+          content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
+        />
+        <meta
+          name="description"
+          content="Muhammad Fahri Ramadhan is a full-stack developer based in Bandung, Indonesia."
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://nusakalainstitute.com/" /> */}
+        <meta
+          property="og:title"
+          content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
+        />
+        <meta
+          property="og:description"
+          content="Muhammad Fahri Ramadhan is a full-stack developer based in Bandung, Indonesia."
+        />
+        <meta property="og:image" content="/images/avatar.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        {/* <meta property="twitter:url" content="https://nusakalainstitute.com/" /> */}
+        <meta
+          property="twitter:title"
+          content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
+        />
+        <meta
+          property="twitter:description"
+          content="Muhammad Fahri Ramadhan is a full-stack developer based in Bandung, Indonesia."
+        />
+        <meta property="twitter:image" content="/images/avatar.jpg" />
       </Head>
       <Flex
         direction={{ base: "column", xl: "row" }}
