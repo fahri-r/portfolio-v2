@@ -3,19 +3,61 @@ import { shadow } from "@/lib/shadow";
 import { transition } from "@/lib/transition";
 import {
   Box,
+  Button,
   Flex,
   Grid,
   GridItem,
-  Heading,
   Input,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { useState } from "react";
 import { IoPaperPlane } from "react-icons/io5";
 import SectionLayout from "./layouts/SectionLayout";
+import { useForm } from "react-hook-form";
 
 const ContactSection = () => {
+  const toast = useToast();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+    // fetch("/api/message", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(formData),
+    // })
+    //   .then(() => {
+    //     toast({
+    //       title: "Message submitted.",
+    //       description: "We've sent your message to Muhammad Fahri Ramadhan.",
+    //       status: "success",
+    //       duration: 9000,
+    //       isClosable: true,
+    //       position: "top-right",
+    //     });
+    //   })
+    //   .catch(() => {
+    //     toast({
+    //       title: "Can't submit your message.",
+    //       description:
+    //         "Unfortunately your message couldn't be sent to Muhammad Fahri Ramadhan. Please fill all required fields.",
+    //       status: "error",
+    //       duration: 9000,
+    //       isClosable: true,
+    //       position: "top-right",
+    //     });
+    //   });
+  };
+
   const firstMotion = {
     animate: {
       opacity: [0, 1],
@@ -36,12 +78,13 @@ const ContactSection = () => {
                 fontWeight="normal"
                 borderWidth="1px"
                 borderStyle="solid"
-                borderColor="jet.100"
+                borderColor={errors.fullName ? "red.300" : "jet.100"}
                 borderRadius={"14px"}
                 outline="none"
                 w="full"
                 bg="none"
                 placeholder="Full name"
+                {...register("fullName", { required: true })}
                 required
               />
             </GridItem>
@@ -54,13 +97,20 @@ const ContactSection = () => {
                 fontWeight="normal"
                 borderWidth="1px"
                 borderStyle="solid"
-                borderColor="jet.100"
+                borderColor={errors.email ? "red.300" : "jet.100"}
                 borderRadius={"14px"}
                 outline="none"
                 w="full"
                 bg="none"
                 placeholder="Email"
                 type="email"
+                {...register("email", {
+                  required: true,
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
                 required
               />
             </GridItem>
@@ -73,12 +123,13 @@ const ContactSection = () => {
                 fontWeight="normal"
                 borderWidth="1px"
                 borderStyle="solid"
-                borderColor="jet.100"
+                borderColor={errors.subject ? "red.300" : "jet.100"}
                 borderRadius={"14px"}
                 outline="none"
                 w="full"
                 bg="none"
                 placeholder="Subject"
+                {...register("subject", { required: true })}
                 required
               />
             </GridItem>
@@ -92,12 +143,13 @@ const ContactSection = () => {
                 fontWeight="normal"
                 borderWidth="1px"
                 borderStyle="solid"
-                borderColor="jet.100"
+                borderColor={errors.message ? "red.300" : "jet.100"}
                 borderRadius={"14px"}
                 outline="none"
                 w="full"
                 bg="none"
                 placeholder="Message"
+                {...register("message", { required: true })}
                 required
               />
             </GridItem>
@@ -106,6 +158,7 @@ const ContactSection = () => {
               colStart={{ base: 1, lg: 4 }}
             >
               <Flex
+                onClick={handleSubmit(onSubmit)}
                 opacity={0.7}
                 cursor="not-allowed"
                 p={{ base: "13px 20px", md: "15px 20px" }}
