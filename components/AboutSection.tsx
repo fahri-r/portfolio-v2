@@ -42,7 +42,7 @@ const AboutSection = () => {
           color="whiteAlpha.900"
           textTransform="capitalize"
         >
-          What I'm Doing
+          What I&apos;m Doing
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={"20px 25px"}>
           {Profile.services.map((x, i) => (
