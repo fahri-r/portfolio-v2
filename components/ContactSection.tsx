@@ -23,39 +23,40 @@ const ContactSection = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data: any) => {
-    console.log(data);
-    // fetch("/api/message", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-    //   .then(() => {
-    //     toast({
-    //       title: "Message submitted.",
-    //       description: "We've sent your message to Muhammad Fahri Ramadhan.",
-    //       status: "success",
-    //       duration: 9000,
-    //       isClosable: true,
-    //       position: "top-right",
-    //     });
-    //   })
-    //   .catch(() => {
-    //     toast({
-    //       title: "Can't submit your message.",
-    //       description:
-    //         "Unfortunately your message couldn't be sent to Muhammad Fahri Ramadhan. Please fill all required fields.",
-    //       status: "error",
-    //       duration: 9000,
-    //       isClosable: true,
-    //       position: "top-right",
-    //     });
-    //   });
+    fetch("/api/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then(() => {
+        toast({
+          title: "Message submitted.",
+          description: "We've sent your message to Muhammad Fahri Ramadhan.",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+          position: "top-right",
+        });
+        reset();
+      })
+      .catch(() => {
+        toast({
+          title: "Can't submit your message.",
+          description:
+            "Unfortunately your message couldn't be sent to Muhammad Fahri Ramadhan. Please fill all required fields.",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+          position: "top-right",
+        });
+      });
   };
 
   const firstMotion = {

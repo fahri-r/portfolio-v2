@@ -5,7 +5,7 @@ const conn = {
 };
 
 export async function dbConnect() {
-  const db = await connect("mongodb://localhost:27017/asu").then(() => {
+  const db = await connect(process.env.MONGODB_URI!).then(() => {
     conn.isConnected = true;
   });
 }
