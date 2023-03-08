@@ -31,37 +31,34 @@ const ProjectLayout = ({
           name="title"
           content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
         />
-        {/* <meta
-        name="description"
-        content={isId ? content.artikel : content.article}
-      /> */}
+        <meta name="description" content="" />
 
         <meta property="og:site_name" content="Fahri's homepage" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://nusakalainstitute.com/" /> */}
+        <meta
+          property="og:url"
+          content="https://portfolio-alpha-self-89.vercel.app/"
+        />
         <meta
           property="og:title"
           content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
         />
-        {/* <meta
-          property="og:description"
-          content={isId ? content.artikel : content.article}
-        /> */}
+        <meta property="og:description" content="" />
         <meta property="og:image" content={thumbnail} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        {/* <meta property="twitter:url" content="https://nusakalainstitute.com/" /> */}
+        <meta
+          property="twitter:url"
+          content="https://portfolio-alpha-self-89.vercel.app/"
+        />
         <meta
           property="twitter:title"
           content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
         />
-        {/* <meta
-          property="twitter:description"
-          content={isId ? content.artikel : content.article}
-        /> */}
+        <meta property="twitter:description" content="" />
         <meta property="twitter:image" content={thumbnail} />
       </Head>
       <Flex

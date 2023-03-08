@@ -35,7 +35,10 @@ const MainLayout = ({
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://nusakalainstitute.com/" /> */}
+        <meta
+          property="og:url"
+          content="https://portfolio-alpha-self-89.vercel.app/"
+        />
         <meta
           property="og:title"
           content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
@@ -48,7 +51,10 @@ const MainLayout = ({
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        {/* <meta property="twitter:url" content="https://nusakalainstitute.com/" /> */}
+        <meta
+          property="twitter:url"
+          content="https://portfolio-alpha-self-89.vercel.app/"
+        />
         <meta
           property="twitter:title"
           content={title ? `${title} - Fahri's homepage` : "Fahri's homepage"}
