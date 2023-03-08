@@ -85,6 +85,9 @@ const ContactSection = () => {
                 w="full"
                 bg="none"
                 placeholder="Full name"
+                _placeholder={{
+                  color: "whiteAlpha.500",
+                }}
                 {...register("fullName", { required: true })}
                 required
               />
@@ -104,6 +107,9 @@ const ContactSection = () => {
                 w="full"
                 bg="none"
                 placeholder="Email"
+                _placeholder={{
+                  color: "whiteAlpha.500",
+                }}
                 type="email"
                 {...register("email", {
                   required: true,
@@ -130,6 +136,9 @@ const ContactSection = () => {
                 w="full"
                 bg="none"
                 placeholder="Subject"
+                _placeholder={{
+                  color: "whiteAlpha.500",
+                }}
                 {...register("subject", { required: true })}
                 required
               />
@@ -150,6 +159,9 @@ const ContactSection = () => {
                 w="full"
                 bg="none"
                 placeholder="Message"
+                _placeholder={{
+                  color: "whiteAlpha.500",
+                }}
                 {...register("message", { required: true })}
                 required
               />
@@ -161,7 +173,7 @@ const ContactSection = () => {
               <Flex
                 onClick={handleSubmit(onSubmit)}
                 opacity={0.7}
-                cursor="not-allowed"
+                cursor="pointer"
                 p={{ base: "13px 20px", md: "15px 20px" }}
                 fontSize={{ base: 14, md: 16 }}
                 position="relative"
