@@ -180,9 +180,14 @@ const Sidebar = () => {
                   value={Profile.email}
                 />
                 <SidebarItem
-                  title="Birthday"
+                  title="Age"
                   icon={AiOutlineCalendar}
-                  value={new Date(Profile.dob).toDateString()}
+                  value={Math.floor(
+                    (new Date().valueOf() - new Date(Profile.dob).valueOf()) /
+                      1000 /
+                      (60 * 60 * 24) /
+                      365.25
+                  ).toString()}
                 />
                 <SidebarItem
                   title="Location"

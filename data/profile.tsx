@@ -17,17 +17,20 @@ export const Profile = {
       description:
         "High-quality development of sites at the professional level.",
       imgUrl: "/images/services/terminal.svg",
+      href: "/?tab=portfolio&category=Website",
     },
     {
       title: "Telegram Bot",
       description: "Professional development of command based telegram bot.",
       imgUrl: "/images/services/bot.svg",
+      href: "/?tab=portfolio&category=Telegram+Bot",
     },
     {
       title: "Blockchain App",
       description:
         "Create web based application that integrated with the blockchain.",
       imgUrl: "/images/services/bitcoin.svg",
+      href: "/?tab=portfolio&category=Web+App",
     },
   ],
   studies: [

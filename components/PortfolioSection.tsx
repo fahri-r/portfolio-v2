@@ -24,11 +24,21 @@ import { motion } from "framer-motion";
 import { AiOutlineEye } from "react-icons/ai";
 import React, { useState } from "react";
 import SectionLayout from "./layouts/SectionLayout";
+import { useRouter } from "next/router";
 
-const PortfolioSection = () => {
-  const [data, setData] = useState(Portfolio);
-  const [active, setActive] = useState("All");
-  const [menuLabel, setMenuLabel] = useState<string | null>();
+interface PortfolioSectionProps {
+  category?: string;
+}
+
+const PortfolioSection = ({ category }: PortfolioSectionProps) => {
+  const router = useRouter();
+  const data =
+    category && category != "All"
+      ? Portfolio.filter((x) => x.category == category)
+      : Portfolio;
+  const active = category && category.length > 0 ? category : "All";
+  const menuLabel =
+    category && category.length > 0 ? category : "Select Category";
   const [isShowed, setIsShowed] = useState<boolean>(false);
 
   const firstMotion = {
@@ -39,16 +49,21 @@ const PortfolioSection = () => {
   };
 
   const handleFilterClick = (label: string) => {
-    if (label == "All") {
-      setData(Portfolio);
-      setActive("All");
-      setMenuLabel("All");
-    } else {
-      const filteredPortfolio = Portfolio.filter((x) => x.category == label);
-      setData(filteredPortfolio);
-      setActive(label);
-      setMenuLabel(label);
-    }
+    router.push({
+      pathname: router.pathname,
+      query: { ...router.query, category: label },
+    });
+    setIsShowed(false);
+    // if (label == "All") {
+    //   setData(Portfolio);
+    //   setActive("All");
+    //   setMenuLabel("All");
+    // } else {
+    //   const filteredPortfolio = Portfolio.filter((x) => x.category == label);
+    //   setData(filteredPortfolio);
+    //   setActive(label);
+    //   setMenuLabel(label);
+    // }
   };
 
   return (
@@ -76,7 +91,7 @@ const PortfolioSection = () => {
             variant="unstyled"
             onClick={() => setIsShowed(!isShowed)}
           >
-            <Text>{menuLabel ?? "Select Category"}</Text>
+            <Text>{menuLabel}</Text>
             <ChevronDownIcon />
           </Button>
           <List

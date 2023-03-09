@@ -1,14 +1,13 @@
 import { Box, Button, Flex } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import React, { Dispatch, SetStateAction } from "react";
 
-interface NavbarProps {
-  setSelectedSection: Dispatch<SetStateAction<string>>;
-  selectedSection: string;
-}
-
-const Navbar = ({ setSelectedSection, selectedSection }: NavbarProps) => {
+const Navbar = () => {
+  const router = useRouter();
+  const selectedSection = router.query.tab ?? "about";
   const handleClick = (data: string) => {
-    setSelectedSection(data);
+    // setSelectedSection(data);
+    router.push({ pathname: "/", query: { tab: data } });
   };
 
   return (

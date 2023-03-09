@@ -5,25 +5,52 @@ import React, { useState } from "react";
 import AboutSection from "@/components/AboutSection";
 import ResumeSection from "@/components/ResumeSection";
 import ContactSection from "@/components/ContactSection";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
-  const [selectedSection, setSelectedSection] = useState("about");
+interface HomeProps {
+  section: string;
+  category: string;
+}
 
-  const section: any = {
+const Home = ({ section, category }: HomeProps) => {
+  const router = useRouter();
+
+  const sections: any = {
     about: <AboutSection />,
     resume: <ResumeSection />,
     contact: <ContactSection />,
-    portfolio: <PortfolioSection />,
+    portfolio: <PortfolioSection category={category} />,
   };
 
   return (
-    <MainLayout
-      selectedSection={selectedSection}
-      setSelectedSection={setSelectedSection}
-    >
-      {section[selectedSection]}
-    </MainLayout>
+    <MainLayout>{section ? sections[section] : sections.about}</MainLayout>
   );
+};
+
+export default Home;
+
+export async function getServerSideProps(context: any) {
+  let section: string;
+  if (context.query.tab) {
+    section = context.query.tab;
+  } else {
+    section = "";
+  }
+
+  let category: string;
+  if (context.query.category) {
+    category = context.query.category;
+  } else {
+    category = "";
+  }
+
+  return {
+    props: {
+      section,
+      category,
+    },
+  };
 }

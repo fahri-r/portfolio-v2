@@ -6,17 +6,10 @@ import Sidebar from "../Sidebar";
 
 interface MainLayoutProps {
   children: ReactElement;
-  setSelectedSection: Dispatch<SetStateAction<string>>;
-  selectedSection: string;
   title?: string;
 }
 
-const MainLayout = ({
-  children,
-  setSelectedSection,
-  selectedSection,
-  title,
-}: MainLayoutProps) => {
+const MainLayout = ({ children, title }: MainLayoutProps) => {
   return (
     <>
       <Head>
@@ -84,10 +77,7 @@ const MainLayout = ({
           position="relative"
           boxSizing="border-box"
         >
-          <Navbar
-            selectedSection={selectedSection}
-            setSelectedSection={setSelectedSection}
-          />
+          <Navbar />
           {children}
         </Box>
       </Flex>

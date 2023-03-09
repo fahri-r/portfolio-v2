@@ -11,15 +11,11 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import SectionLayout from "./layouts/SectionLayout";
 
 const AboutSection = () => {
-  const firstMotion = {
-    animate: {
-      opacity: [0, 1],
-      transition: { ease: "easeOut", duration: 0.4 },
-    },
-  };
+  const router = useRouter();
   return (
     <SectionLayout title="About Me">
       <Box
@@ -42,12 +38,13 @@ const AboutSection = () => {
           color="whiteAlpha.900"
           textTransform="capitalize"
         >
-          What I&apos;m Doing
+          Services
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={"20px 25px"}>
           {Profile.services.map((x, i) => (
             <Flex
               key={i}
+              cursor="pointer"
               direction={{ base: "column", md: "row" }}
               justifyContent={{ base: "center", md: "flex-start" }}
               alignItems={{ base: "center", md: "flex-start" }}
@@ -66,6 +63,7 @@ const AboutSection = () => {
                 borderRadius: "inherit",
                 zIndex: -1,
               }}
+              onClick={() => router.push(x.href)}
             >
               <Box mt={"5px"}>
                 <Image
