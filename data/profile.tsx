@@ -49,10 +49,10 @@ export const Profile = {
   ],
   experiences: [
     {
-      name: "Matakala",
-      year: "2022 - Now",
+      name: "PT. Bhairawa Tantra Nusantara",
+      year: "2022 - 2023",
       description:
-        "I am also a full stack developer at Matakala. I am responsible for maintaining the website and sometimes developing DApps for Matakala.",
+        "I am also a full stack developer at PT. Bhairawa Tantra Nusantara. I am responsible for maintaining the website and sometimes developing DApps for PT. Bhairawa Tantra Nusantara.",
     },
   ],
   programmingSkills: [
