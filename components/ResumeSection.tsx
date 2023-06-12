@@ -13,6 +13,7 @@ import {
 import { motion } from "framer-motion";
 import { SlGraduation, SlBriefcase } from "react-icons/sl";
 import SectionLayout from "./layouts/SectionLayout";
+import { Months } from "@/data/months";
 
 const ResumeSection = () => {
   const firstMotion = {
@@ -195,7 +196,8 @@ const ResumeSection = () => {
                 fontWeight="normal"
                 lineHeight={"1.6"}
               >
-                {x.year}
+                {`${Months[x.in.month - 1]}  ${x.in.year} - `}
+                {x.out ? `${Months[x.out.month - 1]}  ${x.in.year}` : "Present"}
               </Box>
               <Text
                 maxW={700}

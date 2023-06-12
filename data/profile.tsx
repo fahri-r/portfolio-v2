@@ -50,9 +50,25 @@ export const Profile = {
   experiences: [
     {
       name: "PT. Bhairawa Tantra Nusantara",
-      year: "2022 - 2023",
+      in: {
+        month: 8,
+        year: 2022,
+      },
+      out: {
+        month: 6,
+        year: 2023,
+      },
       description:
-        "I am also a full stack developer at PT. Bhairawa Tantra Nusantara. I am responsible for maintaining the website and sometimes developing DApps for PT. Bhairawa Tantra Nusantara.",
+        "I was a full stack developer at PT. Bhairawa Tantra Nusantara. I am responsible for maintaining the website and sometimes developing DApps for PT. Bhairawa Tantra Nusantara.",
+    },
+    {
+      name: "PT. Ever Green Hans",
+      in: {
+        month: 6,
+        year: 2023,
+      },
+      description:
+        "I am responsible for developing payroll desktop app for the client of PT. Ever Green Hans.",
     },
   ],
   programmingSkills: [
