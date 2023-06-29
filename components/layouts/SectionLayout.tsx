@@ -1,6 +1,6 @@
 import { gradient } from "@/lib/gradient";
 import { shadow } from "@/lib/shadow";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -56,8 +56,9 @@ const SectionLayout = ({ children, title }: SectionLayoutProps) => {
       >
         {title}
       </Heading>
-
-      {children}
+      <Flex direction={"column"} gap={"30px"}>
+        {children}
+      </Flex>
     </Box>
   );
 };

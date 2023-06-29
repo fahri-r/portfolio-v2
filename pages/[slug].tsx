@@ -18,9 +18,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { AiOutlineEye } from "react-icons/ai";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { Portfolio, PortfolioItemProps } from "@/data/portfolio";
 import ProjectLayout from "@/components/layouts/ProjectLayout";
 
@@ -82,7 +79,6 @@ export default function Home({ data }: Props) {
           justifyContent="flex-start"
           alignItems="center"
           gap={{ base: "10px", lg: "25px" }}
-          mb={"30px"}
         >
           {data?.tools.map((x, i) => (
             <Text
@@ -98,6 +94,7 @@ export default function Home({ data }: Props) {
             </Text>
           ))}
         </Flex>
+        <Text color={"whiteAlpha.900"}>{data?.description}</Text>
         <Flex direction="column" gap={"30px"} mb={"10px"}>
           {data?.images.map((x, i) => (
             <Box
