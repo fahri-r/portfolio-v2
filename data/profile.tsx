@@ -42,7 +42,7 @@ export const Profile = {
     },
     {
       name: "International Logistics and Business University",
-      year: "2019 - Now",
+      year: "2019 - 2023",
       description:
         "Until this website created, I'm trying to finish my study at International Logistics and Business University with an informatics engineering study program.",
     },
