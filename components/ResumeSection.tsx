@@ -197,7 +197,7 @@ const ResumeSection = () => {
                 lineHeight={"1.6"}
               >
                 {`${Months[x.in.month - 1]}  ${x.in.year} - `}
-                {x.out ? `${Months[x.out.month - 1]}  ${x.in.year}` : "Present"}
+                {x.out ? `${Months[x.out.month - 1]}  ${x.out.year}` : "Present"}
               </Box>
               <Text
                 maxW={700}
