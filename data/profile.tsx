@@ -62,6 +62,19 @@ export const Profile = {
         "I was a full stack developer at PT. Bhairawa Tantra Nusantara. I am responsible for maintaining the website and sometimes developing DApps for PT. Bhairawa Tantra Nusantara.",
     },
     {
+      name: "Injabar UNPAD (Freelance)",
+      in: {
+        month: 12,
+        year: 2022,
+      },
+      out: {
+        month: 2,
+        year: 2023,
+      },
+      description:
+        "Develop a website to assess the performance of BUMD (Regional Owned Enterprises). Many aspects are considered in the performance appraisal, such as finance, operations, and administration.",
+    },
+    {
       name: "PT. Ever Green Hans",
       in: {
         month: 6,
