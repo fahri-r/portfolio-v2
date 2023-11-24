@@ -1,0 +1,21 @@
+.notion-app {
+    background: unset;
+    font-family: "Poppins";
+}
+
+.notion-page-cover {
+    border-radius: 16px;
+}
+
+header {
+    display: none;
+}
+
+.notion-title {
+    display: none;
+}
+
+.notion-page {
+    width: unset;
+    padding: unset;
+}
