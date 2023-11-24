@@ -11,7 +11,7 @@ import { gradient } from "@/lib/gradient";
 
 const inter = Inter({ subsets: ["latin"] });
 interface Props {
-  data: PortfolioItemProps;
+  data: any;
 }
 
 export default function Home({ data }: Props) {
