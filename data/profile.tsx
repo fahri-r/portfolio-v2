@@ -2,7 +2,7 @@ export const Profile = {
   name: "Fahri R",
   description:
     "Muhammad Fahri Ramadhan is a full-stack developer based in Bandung, Indonesia with a passion for building digital services/stuff he wants. When not online, he likes to play video games. Currently, he study at International Logistics and Business University. <br/><br/> He hopes that one day he will become a good programmer and help many people.",
-  job: "Web Developer",
+  job: "Software Engineer",
   dob: "12/07/2000",
   location: "Indonesia",
   freelance: true,
@@ -44,22 +44,35 @@ export const Profile = {
       name: "International Logistics and Business University",
       year: "2019 - 2023",
       description:
-        "Until this website created, I'm trying to finish my study at International Logistics and Business University with an informatics engineering study program.",
+        "I successfully completed my studies at the International Logistics and Business University with GPA of 3.8 in Informatics Engineering program.",
     },
   ],
   experiences: [
     {
-      name: "PT. Bhairawa Tantra Nusantara",
+      name: "PT. Ever Green Hans (Freelance)",
       in: {
-        month: 8,
-        year: 2022,
-      },
-      out: {
         month: 6,
         year: 2023,
       },
+      out: {
+        month: 8,
+        year: 2023,
+      },
       description:
-        "I was a full stack developer at PT. Bhairawa Tantra Nusantara. I am responsible for maintaining the website and sometimes developing DApps for PT. Bhairawa Tantra Nusantara.",
+        "I am responsible for developing payroll desktop app for the client of PT. Ever Green Hans.",
+    },
+    {
+      name: "HIPMI Kabupaten Bekasi (Freelance)",
+      in: {
+        month: 3,
+        year: 2023,
+      },
+      out: {
+        month: 3,
+        year: 2023,
+      },
+      description:
+        "Develop a company profile website to introduce HIPMI Kabupaten Bekasi to the public.",
     },
     {
       name: "Injabar UNPAD (Freelance)",
@@ -75,13 +88,17 @@ export const Profile = {
         "Develop a website to assess the performance of BUMD (Regional Owned Enterprises). Many aspects are considered in the performance appraisal, such as finance, operations, and administration.",
     },
     {
-      name: "PT. Ever Green Hans",
+      name: "PT. Bhairawa Tantra Nusantara",
       in: {
+        month: 8,
+        year: 2022,
+      },
+      out: {
         month: 6,
         year: 2023,
       },
       description:
-        "I am responsible for developing payroll desktop app for the client of PT. Ever Green Hans.",
+        "I was a full stack developer at PT. Bhairawa Tantra Nusantara. I am responsible for maintaining the website and sometimes developing DApps for PT. Bhairawa Tantra Nusantara.",
     },
   ],
   programmingSkills: [
